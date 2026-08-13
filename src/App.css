@@ -1,0 +1,82 @@
+.app-shell {
+  color: var(--text-primary);
+}
+
+.nav-surface {
+  backdrop-filter: blur(12px);
+  background: rgba(247, 250, 249, 0.75);
+}
+
+.tracking-tight {
+  letter-spacing: -0.03em;
+}
+
+.btn-cta {
+  background: var(--brand-600);
+  border: 1px solid var(--brand-700);
+  color: #fff;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+  background: var(--brand-700);
+  color: #fff;
+}
+
+.hero-block {
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(41, 134, 107, 0.18),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(234, 122, 71, 0.16),
+      transparent 40%
+    ),
+    linear-gradient(180deg, #f7faf9, #ffffff);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.badge-soft {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+  background: var(--brand-100);
+  border: 1px solid var(--brand-200);
+}
+
+.hero-card {
+  background: #fff;
+  border: 1px solid var(--surface-border);
+}
+
+.section-light {
+  background: #fff;
+}
+
+.feature-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--surface-border);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(24, 36, 31, 0.1);
+}
+
+@media (min-width: 992px) {
+  .py-lg-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
