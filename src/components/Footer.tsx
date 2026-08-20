@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import brandLogo from '../assets/logo.svg'
+import { InstagramIcon, LinkedInIcon } from './Icon'
 import type { ContactItem, LinkItem, NavbarItem } from '../types/siteContent'
 
 interface FooterProps {
@@ -40,6 +41,18 @@ function Footer({
 }: FooterProps) {
   const navigationLinks = toNavigationLinks(navItems)
   const moduleLinks = toModuleLinks(navItems)
+  const socialLinks = [
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/environtools',
+      icon: InstagramIcon,
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/environtools',
+      icon: LinkedInIcon,
+    },
+  ]
 
   return (
     <footer id={sectionId} className="site-footer">
@@ -87,6 +100,25 @@ function Footer({
                 </li>
               ))}
             </ul>
+
+            <div className="footer-social">
+              <h3>Redes sociais</h3>
+              <ul className="footer-links">
+                {socialLinks.map((socialLink) => (
+                  <li key={socialLink.href}>
+                    <a
+                      className="footer-social-link"
+                      href={socialLink.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <socialLink.icon className="footer-social-icon" />
+                      {socialLink.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
