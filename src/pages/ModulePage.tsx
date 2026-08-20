@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { siteContent } from '../data/siteContent'
 
@@ -34,6 +35,16 @@ function ModulePage() {
             </div>
           </div>
         </main>
+
+        <Footer
+          sectionId={siteContent.footer.sectionId}
+          brand={siteContent.navbar.brand}
+          description={siteContent.about.description}
+          navItems={siteContent.navbar.navItems}
+          contactItems={siteContent.contact.items}
+          copyright={siteContent.footer.copyright}
+          backToTop={siteContent.footer.backToTop}
+        />
       </div>
     )
   }
@@ -98,6 +109,16 @@ function ModulePage() {
           </div>
         </section>
       </main>
+
+      <Footer
+        sectionId={siteContent.footer.sectionId}
+        brand={siteContent.navbar.brand}
+        description={siteContent.about.description}
+        navItems={siteContent.navbar.navItems}
+        contactItems={siteContent.contact.items}
+        copyright={siteContent.footer.copyright}
+        backToTop={siteContent.footer.backToTop}
+      />
     </div>
   )
 }

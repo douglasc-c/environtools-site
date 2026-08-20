@@ -19,14 +19,14 @@ function isDropdownItem(
   return 'type' in item && item.type === 'dropdown'
 }
 
-function toFlatLinks(navItems: NavbarItem[]): LinkItem[] {
-  return navItems.flatMap((item) => {
-    if (isDropdownItem(item)) {
-      return item.groups.flatMap((group) => group.items)
-    }
+function toNavigationLinks(navItems: NavbarItem[]): LinkItem[] {
+  return navItems.filter((item): item is LinkItem => !isDropdownItem(item))
+}
 
-    return [item]
-  })
+function toModuleLinks(navItems: NavbarItem[]): LinkItem[] {
+  return navItems
+    .filter(isDropdownItem)
+    .flatMap((item) => item.groups.flatMap((group) => group.items))
 }
 
 function Footer({
@@ -38,8 +38,8 @@ function Footer({
   copyright,
   backToTop,
 }: FooterProps) {
-  const links = toFlatLinks(navItems)
-  const half = Math.ceil(links.length / 2)
+  const navigationLinks = toNavigationLinks(navItems)
+  const moduleLinks = toModuleLinks(navItems)
 
   return (
     <footer id={sectionId} className="site-footer">
@@ -56,10 +56,10 @@ function Footer({
             <p className="mb-0">{description}</p>
           </div>
 
-          <div className="col-6 col-lg-3">
+          <div className="col-6 col-lg-2">
             <h3>Navegação</h3>
             <ul className="footer-links">
-              {links.slice(0, half).map((link) => (
+              {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link to={link.href}>{link.label}</Link>
                 </li>
@@ -67,10 +67,10 @@ function Footer({
             </ul>
           </div>
 
-          <div className="col-6 col-lg-2">
+          <div className="col-6 col-lg-3">
             <h3>Módulos</h3>
             <ul className="footer-links">
-              {links.slice(half).map((link) => (
+              {moduleLinks.map((link) => (
                 <li key={link.href}>
                   <Link to={link.href}>{link.label}</Link>
                 </li>

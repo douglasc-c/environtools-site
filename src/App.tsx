@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
 import './App.css'
 import About from './components/About'
@@ -14,7 +15,18 @@ import Testimonials from './components/Testimonials'
 import { siteContent } from './data/siteContent'
 import ModulePage from './pages/ModulePage'
 import PlansPage from './pages/PlansPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import { Analytics } from '@vercel/analytics/react'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function HomePage() {
   return (
@@ -77,10 +89,12 @@ function HomePage() {
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/plans" element={<PlansPage />} />
         <Route path="/modules/:moduleId" element={<ModulePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Analytics />
