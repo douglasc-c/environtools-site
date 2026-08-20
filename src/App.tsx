@@ -14,6 +14,7 @@ import Testimonials from './components/Testimonials'
 import { siteContent } from './data/siteContent'
 import ModulePage from './pages/ModulePage'
 import PlansPage from './pages/PlansPage'
+import { Analytics } from '@vercel/analytics/react'
 
 function HomePage() {
   return (
@@ -75,12 +76,15 @@ function HomePage() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/plans" element={<PlansPage />} />
-      <Route path="/modules/:moduleId" element={<ModulePage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/plans" element={<PlansPage />} />
+        <Route path="/modules/:moduleId" element={<ModulePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Analytics />
+    </>
   )
 }
 
