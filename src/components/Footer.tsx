@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import brandLogo from '../assets/logo.svg'
 import type { ContactItem, LinkItem, NavbarItem } from '../types/siteContent'
 
 interface FooterProps {
@@ -12,12 +13,20 @@ interface FooterProps {
   backToTop: LinkItem
 }
 
+function isDropdownItem(
+  item: NavbarItem,
+): item is Extract<NavbarItem, { type: 'dropdown' }> {
+  return 'type' in item && item.type === 'dropdown'
+}
+
 function toFlatLinks(navItems: NavbarItem[]): LinkItem[] {
-  return navItems.flatMap((item) =>
-    'type' in item && item.type === 'dropdown'
-      ? item.groups.flatMap((group) => group.items)
-      : [item],
-  )
+  return navItems.flatMap((item) => {
+    if (isDropdownItem(item)) {
+      return item.groups.flatMap((group) => group.items)
+    }
+
+    return [item]
+  })
 }
 
 function Footer({
@@ -37,7 +46,13 @@ function Footer({
       <div className="container">
         <div className="row g-5">
           <div className="col-lg-4">
-            <h3>{brand.label}</h3>
+            <Link className="d-inline-flex mb-3" to={brand.href}>
+              <img
+                src={brandLogo}
+                alt={`${brand.label} logo`}
+                className="brand-logo"
+              />
+            </Link>
             <p className="mb-0">{description}</p>
           </div>
 
