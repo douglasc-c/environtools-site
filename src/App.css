@@ -729,6 +729,10 @@
   box-shadow: 0 30px 70px rgba(27, 36, 22, 0.18);
 }
 
+.contact-card h2 {
+  color: var(--primary);
+}
+
 .contact-card .form-control {
   border-radius: 12px;
   border-color: var(--surface-border);
