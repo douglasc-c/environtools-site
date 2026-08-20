@@ -151,7 +151,7 @@ export const siteContent: SiteContent = {
         description:
           'Segurança, padronização e controle do ciclo de vida dos insumos químicos.',
         resources: [
-          'Cadastro e FDS/FISPQ',
+          'Cadastro e FDS',
           'Fluxo de aprovação',
           'Dashboard de controle',
         ],
@@ -370,7 +370,7 @@ export const siteContent: SiteContent = {
     },
     secondaryCta: {
       label: 'Falar por WhatsApp',
-      href: 'https://wa.me/5511999999999',
+      href: 'https://wa.me/5541998227111',
     },
     items: [
       {
@@ -380,8 +380,8 @@ export const siteContent: SiteContent = {
       },
       {
         label: 'Telefone',
-        value: '(11) 99999-9999',
-        href: 'tel:+5511999999999',
+        value: '(41) 9 9822-7111',
+        href: 'tel:+5541998227111',
       },
       {
         label: 'Atendimento',
@@ -392,10 +392,11 @@ export const siteContent: SiteContent = {
   },
   footer: {
     sectionId: 'start',
-    copyright: '© 2026 EnvironTools. Todos os direitos reservados.',
+    copyright:
+      'Desenvolvido por ToolsDev Technology. © 2026 EnvironTools. Todos os direitos reservados.',
     backToTop: {
-      label: 'Voltar ao topo',
-      href: '/',
+      label: 'Política de Privacidade',
+      href: '/privacy-policy',
     },
   },
 }
