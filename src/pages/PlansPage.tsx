@@ -64,7 +64,7 @@ function PlansPage() {
       />
 
       <main className="flex-grow-1">
-        <section className="hero-block py-5 py-lg-6">
+        <section className="page-hero py-5 py-lg-6">
           <div className="container">
             <div className="row align-items-center g-4">
               <div className="col-lg-8">
@@ -81,14 +81,14 @@ function PlansPage() {
                   <Link className="btn btn-cta" to="/">
                     Voltar para home
                   </Link>
-                  <a className="btn btn-outline-dark" href="#pricing">
+                  <a className="btn btn-ghost btn-ghost-dark" href="#pricing">
                     Ver precificação
                   </a>
                 </div>
               </div>
 
               <div className="col-lg-4">
-                <div className="hero-card p-4 rounded-4 shadow-sm">
+                <div className="panel-card p-4">
                   <h2 className="h5 mb-3">Investimento geral</h2>
                   <ul className="list-unstyled d-grid gap-2 mb-0">
                     <li>Por usuário: R$ 30,00 - R$ 70,00</li>
@@ -116,7 +116,7 @@ function PlansPage() {
             <div className="row g-4">
               {modulePricing.map((item) => (
                 <div className="col-12 col-md-6 col-lg-4" key={item.name}>
-                  <div className="feature-card h-100 p-4 rounded-4">
+                  <div className="feature-card h-100">
                     <h3 className="h5 mb-3">{item.name}</h3>
                     <div className="display-6 fw-semibold">{item.price}</div>
                   </div>
@@ -137,10 +137,8 @@ function PlansPage() {
               {plans.map((plan) => (
                 <div className="col-12 col-lg-4" key={plan.name}>
                   <div
-                    className={`h-100 p-4 rounded-4 border ${
-                      plan.highlight
-                        ? 'feature-card border-primary shadow-sm'
-                        : 'feature-card'
+                    className={`feature-card h-100${
+                      plan.highlight ? ' border-primary shadow-sm' : ''
                     }`}
                   >
                     <div className="d-flex justify-content-between align-items-center mb-3">
@@ -171,7 +169,7 @@ function PlansPage() {
 
         <section className="py-5">
           <div className="container">
-            <div className="feature-card p-4 p-lg-5 rounded-4">
+            <div className="feature-card p-4 p-lg-5">
               <h2 className="h1 fw-semibold mb-4">Estratégias de venda</h2>
 
               <div className="row g-4">

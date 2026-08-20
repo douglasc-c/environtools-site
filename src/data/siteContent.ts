@@ -75,25 +75,26 @@ export const siteContent: SiteContent = {
     },
   },
   hero: {
-    badge: 'Base React + Bootstrap',
-    title: 'Construa com rapidez e estilo com confiança.',
+    badge: 'Sistema de gestão ambiental completo',
+    title:
+      'Simplifique a gestão ambiental da sua empresa em uma única plataforma.',
     description:
-      'Um ponto de partida limpo com seções reutilizáveis, comportamento responsivo e utilitários do Bootstrap prontos para páginas de produto e dashboards.',
+      'Automatize a emissão de MTRs com integração SINIR, controle condicionantes de licenças, monitore efluentes e garanta 100% de conformidade legal sem planilhas.',
     primaryCta: {
-      label: 'Começar a construir',
-      href: '#start',
+      label: 'Agendar demonstração',
+      href: '#contact',
     },
     secondaryCta: {
-      label: 'Explorar componentes',
+      label: 'Conhecer módulos',
       href: '#features',
     },
     card: {
-      title: 'A base inclui',
+      title: 'Por que a EnvironTools?',
       items: [
-        'Navbar responsiva e seção hero',
-        'Utilitários e grid do Bootstrap',
-        'Tokens visuais personalizados em variáveis CSS',
-        'Seções prontas para escalar',
+        'Integração direta com o SINIR para emissão rápida de MTR',
+        'Alertas automáticos para renovação de licenças e condicionantes',
+        'Dashboards em tempo real para resíduos, consumo e emissões',
+        'Pronto para auditorias de conformidade e ISO 14001',
       ],
     },
   },
@@ -197,6 +198,35 @@ export const siteContent: SiteContent = {
       },
     ],
   },
+  process: {
+    sectionId: 'process',
+    eyebrow: 'Como funciona',
+    title: 'Da implantação à conformidade contínua em quatro etapas',
+    description:
+      'Um caminho estruturado para tirar a gestão ambiental das planilhas e colocar a operação sob controle, com responsáveis, prazos e evidências.',
+    steps: [
+      {
+        title: 'Diagnóstico ambiental',
+        description:
+          'Mapeamos licenças, condicionantes, resíduos e rotinas atuais para identificar riscos e prioridades da sua operação.',
+      },
+      {
+        title: 'Configuração da plataforma',
+        description:
+          'Ativamos os módulos necessários, cadastramos unidades, usuários e integramos o SINIR para emissão de MTR.',
+      },
+      {
+        title: 'Migração e treinamento',
+        description:
+          'Importamos documentos e históricos existentes e capacitamos as equipes de meio ambiente, operação e qualidade.',
+      },
+      {
+        title: 'Monitoramento contínuo',
+        description:
+          'Alertas, dashboards e planos de ação mantêm a conformidade viva e sua empresa sempre pronta para auditorias.',
+      },
+    ],
+  },
   plans: {
     sectionId: 'plans',
     title: 'Planos pensados para cada etapa da sua operação',
@@ -260,6 +290,72 @@ export const siteContent: SiteContent = {
       { value: '7', label: 'módulos integrados' },
       { value: '24/7', label: 'visibilidade operacional' },
       { value: '100%', label: 'controle documental' },
+    ],
+  },
+  testimonials: {
+    sectionId: 'testimonials',
+    eyebrow: 'Depoimentos',
+    title: 'Times ambientais que trocaram planilhas por controle real',
+    description:
+      'Resultados relatados por gestores ambientais, coordenadores de qualidade e consultorias que utilizam a plataforma no dia a dia.',
+    items: [
+      {
+        quote:
+          'A emissão de MTR deixou de ser um gargalo. O que antes consumia um turno inteiro hoje é resolvido em minutos, com rastreabilidade completa.',
+        author: 'Marina Alves',
+        role: 'Coordenadora de Meio Ambiente · Indústria alimentícia',
+      },
+      {
+        quote:
+          'Os alertas de condicionantes mudaram nossa rotina. Nenhum prazo de licença passa despercebido e a auditoria ISO 14001 ficou muito mais tranquila.',
+        author: 'Rafael Menezes',
+        role: 'Gerente de SGI · Metalurgia',
+      },
+      {
+        quote:
+          'Atendemos várias plantas com a mesma equipe. Ter documentos, monitoramentos e planos de ação centralizados reduziu drasticamente o retrabalho.',
+        author: 'Carolina Prado',
+        role: 'Sócia · Consultoria ambiental',
+      },
+    ],
+  },
+  faq: {
+    sectionId: 'faq',
+    eyebrow: 'Dúvidas frequentes',
+    title: 'O que as empresas costumam perguntar antes de começar',
+    description:
+      'Se a sua dúvida não estiver aqui, fale com nosso time: respondemos com base no cenário real da sua operação.',
+    items: [
+      {
+        question: 'Quanto tempo leva a implantação?',
+        answer:
+          'O período varia conforme o número de módulos e unidades. Operações de porte médio costumam iniciar o uso produtivo já nas primeiras semanas, começando pelos módulos mais críticos.',
+      },
+      {
+        question: 'A plataforma integra com o SINIR?',
+        answer:
+          'Sim. A emissão de MTR é feita com integração direta ao SINIR, eliminando o retrabalho de digitar os mesmos dados em dois sistemas e reduzindo erros de preenchimento.',
+      },
+      {
+        question: 'Consigo migrar meus documentos e históricos atuais?',
+        answer:
+          'Sim. Durante a implantação importamos licenças, condicionantes, laudos e planilhas existentes para que o histórico da operação não seja perdido.',
+      },
+      {
+        question: 'A solução atende múltiplas unidades?',
+        answer:
+          'Sim. É possível organizar unidades, filiais e áreas com permissões específicas, mantendo visão consolidada para a matriz e visão detalhada para cada planta.',
+      },
+      {
+        question: 'A plataforma ajuda em auditorias e na ISO 14001?',
+        answer:
+          'Todos os registros ficam versionados e rastreáveis, com evidências de tratativa de não conformidades e planos de ação — exatamente o que auditores solicitam.',
+      },
+      {
+        question: 'Posso contratar apenas alguns módulos?',
+        answer:
+          'Sim. Os planos permitem começar pelos módulos essenciais e ampliar conforme a maturidade ambiental da empresa evolui.',
+      },
     ],
   },
   contact: {

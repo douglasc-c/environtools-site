@@ -3,10 +3,14 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import About from './components/About'
 import ContactSection from './components/ContactSection'
+import Faq from './components/Faq'
 import Features from './components/Features'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
+import Process from './components/Process'
+import StatsBand from './components/StatsBand'
+import Testimonials from './components/Testimonials'
 import { siteContent } from './data/siteContent'
 import ModulePage from './pages/ModulePage'
 import PlansPage from './pages/PlansPage'
@@ -29,11 +33,13 @@ function HomePage() {
           secondaryCta={siteContent.hero.secondaryCta}
           card={siteContent.hero.card}
         />
+        <StatsBand stats={siteContent.about.stats} />
         <Features
           sectionId={siteContent.features.sectionId}
           aboutAnchorId={siteContent.features.aboutAnchorId}
           items={siteContent.features.items}
         />
+        <Process {...siteContent.process} />
         <About
           sectionId={siteContent.about.sectionId}
           title={siteContent.about.title}
@@ -41,6 +47,8 @@ function HomePage() {
           values={siteContent.about.values}
           stats={siteContent.about.stats}
         />
+        <Testimonials {...siteContent.testimonials} />
+        <Faq {...siteContent.faq} />
         <ContactSection
           sectionId={siteContent.contact.sectionId}
           badge={siteContent.contact.badge}
@@ -54,6 +62,10 @@ function HomePage() {
 
       <Footer
         sectionId={siteContent.footer.sectionId}
+        brand={siteContent.navbar.brand}
+        description={siteContent.about.description}
+        navItems={siteContent.navbar.navItems}
+        contactItems={siteContent.contact.items}
         copyright={siteContent.footer.copyright}
         backToTop={siteContent.footer.backToTop}
       />

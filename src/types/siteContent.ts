@@ -65,6 +65,46 @@ export interface AboutStat {
   label: string
 }
 
+export interface ProcessStep {
+  title: string
+  description: string
+}
+
+export interface ProcessContent {
+  sectionId: string
+  eyebrow: string
+  title: string
+  description: string
+  steps: ProcessStep[]
+}
+
+export interface TestimonialItem {
+  quote: string
+  author: string
+  role: string
+}
+
+export interface TestimonialsContent {
+  sectionId: string
+  eyebrow: string
+  title: string
+  description: string
+  items: TestimonialItem[]
+}
+
+export interface FaqItem {
+  question: string
+  answer: string
+}
+
+export interface FaqContent {
+  sectionId: string
+  eyebrow: string
+  title: string
+  description: string
+  items: FaqItem[]
+}
+
 export interface AboutContent {
   sectionId: string
   title: string
@@ -105,8 +145,11 @@ export interface SiteContent {
   navbar: NavbarContent
   hero: HeroContent
   features: FeaturesContent
+  process: ProcessContent
   plans: PlansContent
   about: AboutContent
+  testimonials: TestimonialsContent
+  faq: FaqContent
   contact: ContactContent
   footer: FooterContent
 }

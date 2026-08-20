@@ -1,3 +1,5 @@
+import SectionHeading from './SectionHeading'
+
 interface ContactItem {
   label: string
   value: string
@@ -27,29 +29,49 @@ function ContactSection({
   description,
   primaryCta,
   secondaryCta,
+  items,
 }: ContactSectionProps) {
   return (
-    <section id={sectionId} className="section-light py-5 py-lg-6">
+    <section id={sectionId} className="section-dark py-5 py-lg-6">
       <div className="container">
-        <div className="row align-items-center g-4">
+        <div className="row align-items-center g-5">
           <div className="col-lg-6">
-            <span className="badge badge-soft mb-3">{badge}</span>
-            <h2 className="h1 fw-semibold mb-3">{title}</h2>
-            <p className="lead text-muted mb-4">{description}</p>
+            <SectionHeading
+              eyebrow={badge}
+              title={title}
+              description={description}
+              tone="dark"
+            />
 
-            <div className="d-flex flex-wrap gap-2 mb-4">
-              <a className="btn btn-cta" href={primaryCta.href}>
+            <div className="d-flex flex-wrap gap-3">
+              <a className="btn btn-accent" href={primaryCta.href}>
                 {primaryCta.label}
               </a>
-              <a className="btn btn-outline-dark" href={secondaryCta.href}>
+              <a
+                className="btn btn-ghost"
+                href={secondaryCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {secondaryCta.label}
               </a>
             </div>
+
+            <ul className="contact-list">
+              {items.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href}>
+                    <span className="contact-label">{item.label}</span>
+                    <span className="contact-value">{item.value}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="col-lg-6">
-            <div className="feature-card p-4 p-lg-5 rounded-4 h-100">
-              <h2 className="h4 mb-3">Agende uma demonstração</h2>
+            <div className="contact-card">
+              <h2 className="h4 mb-4">Agende uma demonstração</h2>
               <form className="row g-3">
                 <div className="col-md-6">
                   <label className="form-label small text-muted">Nome</label>
@@ -59,7 +81,6 @@ function ContactSection({
                     placeholder="Seu nome"
                   />
                 </div>
-
                 <div className="col-md-6">
                   <label className="form-label small text-muted">Empresa</label>
                   <input
@@ -68,7 +89,6 @@ function ContactSection({
                     placeholder="Sua empresa"
                   />
                 </div>
-
                 <div className="col-md-6">
                   <label className="form-label small text-muted">E-mail</label>
                   <input
@@ -77,7 +97,6 @@ function ContactSection({
                     placeholder="seu@email.com"
                   />
                 </div>
-
                 <div className="col-md-6">
                   <label className="form-label small text-muted">
                     Telefone
@@ -88,14 +107,12 @@ function ContactSection({
                     placeholder="(11) 99999-9999"
                   />
                 </div>
-
                 <div className="col-12">
                   <label className="form-label small text-muted">
                     Data desejada
                   </label>
                   <input type="date" className="form-control" />
                 </div>
-
                 <div className="col-12">
                   <label className="form-label small text-muted">
                     Mensagem
@@ -106,12 +123,11 @@ function ContactSection({
                     placeholder="Conte um pouco sobre sua operação e o que você busca resolver."
                   />
                 </div>
-
                 <div className="col-12">
                   <button type="submit" className="btn btn-cta w-100">
                     Agendar demonstração
                   </button>
-                </div>
+                </div>{' '}
               </form>
             </div>
           </div>

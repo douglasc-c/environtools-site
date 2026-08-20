@@ -1,3 +1,4 @@
+import SectionHeading from './SectionHeading'
 import type { FeatureItem } from '../types/siteContent'
 
 interface FeaturesProps {
@@ -8,14 +9,14 @@ interface FeaturesProps {
 
 function Features({ sectionId, aboutAnchorId, items }: FeaturesProps) {
   return (
-    <section id={sectionId} className="py-5 section-light">
+    <section id={sectionId} className="py-5 py-lg-6 section-soft">
       <div className="container">
-        <div className="mb-4 text-center">
-          <span className="badge badge-soft mb-3">Módulos</span>
-          <h2 className="h1 fw-semibold">
-            Soluções ambientais em um único ecossistema
-          </h2>
-        </div>
+        <SectionHeading
+          eyebrow="Módulos"
+          title="Soluções ambientais em um único ecossistema"
+          description="Cada módulo cobre uma frente crítica da operação e conversa com os demais, eliminando planilhas paralelas e retrabalho."
+          align="center"
+        />
 
         <div className="row g-4">
           {items.map((item, index) => (
@@ -27,26 +28,22 @@ function Features({ sectionId, aboutAnchorId, items }: FeaturesProps) {
               }
               key={item.id ?? item.title}
             >
-              <article className="feature-card h-100 p-4 rounded-4">
-                <div className="mb-3">
-                  <span className="badge badge-soft">Módulo</span>
-                </div>
+              <article className="feature-card">
+                <span className="feature-index">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
 
-                <h3 className="h5 mb-2">{item.title}</h3>
+                <h3 className="feature-title">{item.title}</h3>
 
-                <p className="mb-3 text-muted">
-                  <strong>Foco:</strong> {item.description}
-                </p>
+                <p className="feature-text">{item.description}</p>
 
-                <ul className="list-unstyled mb-3 d-grid gap-2">
+                <ul className="tag-list">
                   {item.resources.map((resource) => (
-                    <li key={resource}>• {resource}</li>
+                    <li key={resource}>{resource}</li>
                   ))}
                 </ul>
 
-                <p className="mb-0 text-muted">
-                  <strong>Benefício:</strong> {item.benefit}
-                </p>
+                <p className="feature-benefit">{item.benefit}</p>
               </article>
             </div>
           ))}

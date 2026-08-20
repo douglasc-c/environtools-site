@@ -17,9 +17,9 @@ function ModulePage() {
           cta={siteContent.navbar.cta}
         />
 
-        <main className="flex-grow-1 d-flex align-items-center">
-          <div className="container py-5 text-center">
-            <div className="card border-0 shadow-sm p-4 p-lg-5">
+        <main className="flex-grow-1 page-hero py-5 py-lg-6">
+          <div className="container">
+            <div className="col-lg-8">
               <span className="badge badge-soft mb-3">
                 Módulo não encontrado
               </span>
@@ -47,7 +47,7 @@ function ModulePage() {
       />
 
       <main className="flex-grow-1">
-        <section className="hero-block py-5 py-lg-6">
+        <section className="page-hero py-5 py-lg-6">
           <div className="container">
             <div className="row align-items-center g-4">
               <div className="col-lg-8">
@@ -58,14 +58,14 @@ function ModulePage() {
                   <Link className="btn btn-cta" to="/">
                     Voltar ao início
                   </Link>
-                  <a className="btn btn-outline-dark" href="/#features">
+                  <a className="btn btn-ghost btn-ghost-dark" href="/#features">
                     Ver todos os módulos
                   </a>
                 </div>
               </div>
 
               <div className="col-lg-4">
-                <div className="hero-card p-4 rounded-4 shadow-sm">
+                <div className="panel-card p-4">
                   <h2 className="h5 mb-3">Benefício principal</h2>
                   <p className="mb-0 text-muted">{module.benefit}</p>
                 </div>
@@ -78,7 +78,7 @@ function ModulePage() {
           <div className="container">
             <div className="row g-4">
               <div className="col-lg-7">
-                <div className="feature-card h-100 p-4 rounded-4">
+                <div className="feature-card h-100">
                   <h2 className="h4 mb-3">Recursos principais</h2>
                   <ul className="list-unstyled d-grid gap-2 mb-0">
                     {module.resources.map((resource) => (
@@ -89,7 +89,7 @@ function ModulePage() {
               </div>
 
               <div className="col-lg-5">
-                <div className="feature-card h-100 p-4 rounded-4">
+                <div className="feature-card h-100">
                   <h2 className="h4 mb-3">Como esse módulo ajuda</h2>
                   <p className="mb-0 text-muted">{module.benefit}</p>
                 </div>

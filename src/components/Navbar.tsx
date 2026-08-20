@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment, useEffect, useRef, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
+import brandLogo from '../assets/logo.svg'
 import type { LinkItem, NavbarItem } from '../types/siteContent'
 
 interface NavbarProps {
@@ -16,15 +17,36 @@ function isDropdownItem(
 }
 
 function Navbar({ brand, navItems, cta }: NavbarProps) {
+  const [isHidden, setIsHidden] = useState(false)
+  const lastScrollPosition = useRef(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.scrollY
+      const isScrollingDown = currentScrollPosition > lastScrollPosition.current
+
+      setIsHidden(isScrollingDown && currentScrollPosition > 80)
+      lastScrollPosition.current = currentScrollPosition
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header>
-      <nav className="navbar navbar-expand-lg nav-surface border-bottom">
-        <div className="container py-2">
+    <header className={`smart-header${isHidden ? ' smart-header-hidden' : ''}`}>
+      <nav className="navbar navbar-expand-lg py-0">
+        <div className="container nav-surface">
           <Link
-            className="navbar-brand fw-semibold tracking-tight"
+            className="navbar-brand fw-semibold tracking-tight d-flex align-items-center gap-2"
             to={brand.href}
           >
-            {brand.label}
+            <img
+              src={brandLogo}
+              alt={`${brand.label} logo`}
+              className="brand-logo"
+            />
           </Link>
 
           <button
@@ -40,7 +62,7 @@ function Navbar({ brand, navItems, cta }: NavbarProps) {
           </button>
 
           <div className="collapse navbar-collapse" id="mainNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
               {navItems.map((item) => {
                 if (isDropdownItem(item)) {
                   return (
@@ -89,18 +111,29 @@ function Navbar({ brand, navItems, cta }: NavbarProps) {
 
                 return (
                   <li className="nav-item" key={item.href}>
-                    <Link className="nav-link" to={item.href}>
-                      {item.label}
-                    </Link>
+                    {item.href.includes('#') ? (
+                      <Link className="nav-link" to={item.href}>
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <NavLink
+                        className={({ isActive }) =>
+                          `nav-link${isActive ? ' active' : ''}`
+                        }
+                        to={item.href}
+                        end
+                      >
+                        {item.label}
+                      </NavLink>
+                    )}
                   </li>
                 )
               })}
-              <li className="nav-item ms-lg-2">
-                <Link className="btn btn-cta" to={cta.href}>
-                  {cta.label}
-                </Link>
-              </li>
             </ul>
+
+            <Link className="btn btn-pill-outline" to={cta.href}>
+              {cta.label}
+            </Link>
           </div>
         </div>
       </nav>

@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  --brand-100: #d9efe6;
-  --brand-200: #b7dfd0;
-  --brand-600: #26755d;
-  --brand-700: #1d5d4a;
-  --text-primary: #192620;
-  --surface-soft: #f4f8f6;
-  --surface-border: #dbe7e1;
+  --primary: #6c7b68;
+  --secondary: #bd8c23;
+  --tertiary: #a7b2a4;
+  --primary-rgb: 108, 123, 104;
+  --secondary-rgb: 189, 140, 35;
+  --tertiary-rgb: 167, 178, 164;
+
+  --deep: #2b2d1b;
+  --deep-soft: #363823;
+  --accent: var(--secondary);
+  --accent-strong: #a97d1f;
+  --accent-soft: #d6b366;
+  --accent-contrast: #ffffff;
+
+  --brand-100: #faf6ee;
+  --brand-200: var(--tertiary);
+  --brand-600: var(--primary);
+  --brand-700: #3d3f26;
+  --text-primary: #23251a;
+  --text-muted: #6f7060;
+  --surface-soft: #f7f4ed;
+  --surface-border: #e6ddca;
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
 }
 
 * {
@@ -18,6 +36,10 @@ html,
 body,
 #root {
   min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
