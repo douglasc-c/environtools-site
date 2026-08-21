@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 
 import './App.css'
 import About from './components/About'
 import ContactSection from './components/ContactSection'
+import CookieConsent, { COOKIE_CONSENT_KEY } from './components/CookieConsent'
 import Faq from './components/Faq'
 import Features from './components/Features'
 import Footer from './components/Footer'
@@ -87,6 +88,14 @@ function HomePage() {
 }
 
 function App() {
+  const [hasAnalyticsConsent, setHasAnalyticsConsent] = useState(false)
+
+  useEffect(() => {
+    setHasAnalyticsConsent(
+      window.localStorage.getItem(COOKIE_CONSENT_KEY) === 'accepted',
+    )
+  }, [])
+
   return (
     <>
       <ScrollToTop />
@@ -97,7 +106,10 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <Analytics />
+      <CookieConsent
+        onChoice={(choice) => setHasAnalyticsConsent(choice === 'accepted')}
+      />
+      {hasAnalyticsConsent && <Analytics />}
     </>
   )
 }

@@ -44,7 +44,10 @@ function PrivacyPolicyPage() {
                   <p className="text-muted mb-0">
                     Podemos coletar dados informados por você em formulários,
                     como nome, e-mail, empresa e telefone, além de dados de
-                    navegação para métricas de uso e melhoria da experiência.
+                    navegação, como páginas acessadas, interações e informações
+                    técnicas do dispositivo, para métricas de uso e melhoria da
+                    experiência. Esses dados de navegação só são coletados após
+                    o seu consentimento por meio do aviso de cookies.
                   </p>
                 </div>
               </div>
@@ -55,14 +58,33 @@ function PrivacyPolicyPage() {
                   <p className="text-muted mb-0">
                     Utilizamos os dados para responder contatos, agendar
                     demonstrações, enviar comunicações relacionadas aos nossos
-                    serviços e aprimorar o desempenho da plataforma.
+                    serviços e aprimorar o desempenho da plataforma. As métricas
+                    de navegação são usadas de forma agregada para analisar o
+                    uso do site, identificar melhorias e acompanhar seu
+                    funcionamento.
                   </p>
                 </div>
               </div>
 
               <div className="col-12">
                 <div className="feature-card h-100">
-                  <h2 className="h4 mb-3">3. Compartilhamento de dados</h2>
+                  <h2 className="h4 mb-3">3. Cookies e consentimento</h2>
+                  <p className="text-muted mb-0">
+                    Utilizamos cookies necessários para o funcionamento do site
+                    e cookies de medição para compreender a navegação e melhorar
+                    nossos canais digitais. Os cookies de medição só são
+                    ativados quando você seleciona “Aceitar cookies”. Ao
+                    selecionar “Recusar”, eles não são ativados, e você ainda
+                    pode navegar normalmente pelo site. Sua escolha é salva no
+                    dispositivo para evitar novas solicitações durante o período
+                    de validade do consentimento.
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-12">
+                <div className="feature-card h-100">
+                  <h2 className="h4 mb-3">4. Compartilhamento de dados</h2>
                   <p className="text-muted mb-0">
                     Não comercializamos dados pessoais. O compartilhamento pode
                     ocorrer apenas com operadores e parceiros essenciais para a
@@ -74,7 +96,7 @@ function PrivacyPolicyPage() {
 
               <div className="col-12">
                 <div className="feature-card h-100">
-                  <h2 className="h4 mb-3">4. Seus direitos</h2>
+                  <h2 className="h4 mb-3">5. Seus direitos</h2>
                   <p className="text-muted mb-0">
                     Você pode solicitar confirmação de tratamento, acesso,
                     correção, anonimização, portabilidade e exclusão de dados,
@@ -85,7 +107,7 @@ function PrivacyPolicyPage() {
 
               <div className="col-12">
                 <div className="feature-card h-100">
-                  <h2 className="h4 mb-3">5. Segurança e retenção</h2>
+                  <h2 className="h4 mb-3">6. Segurança e retenção</h2>
                   <p className="text-muted mb-0">
                     Adotamos medidas técnicas e administrativas para proteger os
                     dados contra acessos não autorizados. Os dados são mantidos
@@ -97,7 +119,7 @@ function PrivacyPolicyPage() {
 
               <div className="col-12">
                 <div className="feature-card h-100">
-                  <h2 className="h4 mb-3">6. Contato</h2>
+                  <h2 className="h4 mb-3">7. Contato</h2>
                   <p className="text-muted mb-4">
                     Em caso de dúvidas sobre esta política ou sobre tratamento
                     de dados pessoais, entre em contato com nosso time.
