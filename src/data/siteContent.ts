@@ -103,98 +103,82 @@ export const siteContent: SiteContent = {
     aboutAnchorId: 'about',
     items: [
       {
-        id: 'waste-management',
-        title: 'Gestão de Resíduos',
+        id: 'aspects-and-impacts',
+        title: 'Matriz Estratégica de Aspectos e Impactos',
         description:
-          'Rastreabilidade completa da geração à destinação final de resíduos.',
+          'Mapeamento inteligente de riscos e oportunidades ambientais integrados ao plano de negócios. Avalie a relevância de cada impacto na cadeia de valor, priorize investimentos de mitigação e tome decisões respaldadas por análises de materialidade.',
         resources: [
-          'Emissão de MTR',
-          'Integração SINIR',
-          'Dashboard analítico',
-          'Filtros avançados',
+          'Riscos e oportunidades',
+          'Análise de materialidade',
+          'Priorização de investimentos',
         ],
         benefit:
-          'Elimina erros na emissão de MTRs, evita penalidades ambientais e simplifica a prestação de contas aos órgãos fiscalizadores.',
-      },
-      {
-        id: 'document-management',
-        title: 'Gestão de Documentos',
-        description:
-          'Controle rigoroso de validades, licenças e documentação da empresa e de terceiros.',
-        resources: [
-          'Documentos da empresa',
-          'Gestão de prestadores (PSA)',
-          'Alertas inteligentes',
-        ],
-        benefit:
-          'Fim do risco de operar com licenças expiradas ou contratar fornecedores irregulares.',
+          'Conecte os impactos ambientais às decisões estratégicas e à cadeia de valor do negócio.',
       },
       {
         id: 'environmental-monitoring',
-        title: 'Monitoramento Ambiental',
+        title: 'Modelagem Preditiva & Indicadores ESG',
         description:
-          'Centralização de todas as variáveis, medições operacionais e requisitos normativos em um só local.',
+          'Acompanhamento de dados de efluentes, emissões e consumo com inteligência analítica. Projete tendências, antecipe desvios em relação às metas e receba previsões de cenários para agir de forma proativa antes que metas sustentáveis sejam comprometidas.',
         resources: [
-          'Condicionantes ambientais',
-          'Monitoramento de consumo',
-          'Monitoramento de efluentes',
-          'Monitoramento de ruído',
-          'Produtos controlados',
-          'Emissões atmosféricas',
+          'Efluentes e emissões',
+          'Projeção de tendências',
+          'Indicadores e metas ESG',
         ],
         benefit:
-          'Garantia de conformidade técnica contínua e histórico consolidado para auditorias e perícias.',
+          'Antecipe desvios e mantenha suas metas sustentáveis sob controle com previsões de cenários.',
       },
       {
-        id: 'chemical-products',
-        title: 'Gestão de Produtos Químicos',
+        id: 'waste-management',
+        title: 'Gestão Estratégica de Resíduos e Economia Circular',
         description:
-          'Segurança, padronização e controle do ciclo de vida dos insumos químicos.',
+          'Rastreabilidade end-to-end integrada ao SINIR focada na meta de descarte zero. Transforme dados de destinação em insights estratégicos para redução de custos, otimização da cadeia de suprimentos e valorização de resíduos.',
         resources: [
-          'Cadastro e FDS',
-          'Fluxo de aprovação',
-          'Dashboard de controle',
+          'Integração SINIR',
+          'Meta de descarte zero',
+          'Economia circular',
         ],
         benefit:
-          'Prevenção de acidentes, controle de estocagem adequada e uso homologado de químicos na planta.',
+          'Reduza custos, otimize a cadeia de suprimentos e valorize resíduos com dados de destinação.',
       },
       {
-        id: 'non-conformities-action-plan',
-        title: 'Não Conformidades & Plano de Ação',
+        id: 'document-management',
+        title: 'Governança Regulatória e Previsibilidade de Licenciamento',
         description:
-          'Tratamento padronizado de desvios e garantia do ciclo de melhoria contínua.',
+          'Previsão e planejamento do ciclo de vida das condicionantes e licenças. Evite paralisações operacionais e passivos financeiros com um cronograma estratégico de renovações e análise de impacto regulatório.',
         resources: [
-          'Registro de não conformidades',
-          'Gestão de planos de ação',
+          'Licenças e condicionantes',
+          'Cronograma de renovações',
+          'Impacto regulatório',
         ],
         benefit:
-          'Agilidade na correção de desvios e comprovação de tratativa em auditorias ISO 14001.',
+          'Evite paralisações e passivos financeiros com previsibilidade sobre os ciclos regulatórios.',
       },
       {
         id: 'environmental-incidents',
-        title: 'Ocorrências Ambientais',
+        title: 'Gestão de Incidentes & Mitigação Preditiva de Riscos',
         description:
-          'Resposta rápida a incidentes e mitigação de impactos no meio ambiente.',
+          'Diagnóstico profundo de causas-raiz com analytics. Identifique padrões operacionais recorrentes para prever potenciais falhas ambientais e implementar planos de contingência de alto impacto.',
         resources: [
-          'Registro de incidentes e acidentes',
-          'Análise de causa raiz',
-          'Planos de mitigação',
+          'Causas-raiz',
+          'Padrões operacionais',
+          'Planos de contingência',
         ],
         benefit:
-          'Estrutura clara para agir em emergências, reduzindo passivos ambientais e danos reputacionais.',
+          'Previna falhas ambientais e fortaleça a resiliência operacional com planos de contingência.',
       },
       {
-        id: 'aspects-and-impacts',
-        title: 'Aspectos e Impactos Ambientais',
+        id: 'non-conformities-action-plan',
+        title: 'Repositório Estratégico e Prontidão para Auditorias ESG',
         description:
-          'Mapeamento de riscos e avaliação do impacto das atividades da empresa no ecossistema.',
+          'Centralização e rastreabilidade de dados auditáveis em conformidade com normas como ISO 14001 e frameworks ESG. Garanta transparência técnica total para investidores, conselho e órgãos reguladores.',
         resources: [
-          'Cadastro de aspectos e impactos',
-          'Matriz de avaliação',
-          'Dashboard de riscos',
+          'Dados auditáveis',
+          'ISO 14001 e ESG',
+          'Transparência técnica',
         ],
         benefit:
-          'Tomada de decisão estratégica baseada em dados, atendendo integralmente aos requisitos de SGIA (ISO 14001).',
+          'Demonstre governança e transparência técnica em auditorias e decisões de alto nível.',
       },
     ],
   },

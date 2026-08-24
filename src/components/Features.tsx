@@ -13,8 +13,8 @@ function Features({ sectionId, aboutAnchorId, items }: FeaturesProps) {
       <div className="container">
         <SectionHeading
           eyebrow="Módulos"
-          title="Soluções ambientais em um único ecossistema"
-          description="Cada módulo cobre uma frente crítica da operação e conversa com os demais, eliminando planilhas paralelas e retrabalho."
+          title="Principais Módulos"
+          description="Inteligência ambiental para antecipar riscos, orientar decisões estratégicas e transformar sustentabilidade em vantagem competitiva."
           align="center"
         />
 
